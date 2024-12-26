@@ -212,7 +212,7 @@ button:hover {
 /* landing view  */
 .landingview {
     background-color: #f5f7ff;
-    background-image: url("/img/e5ebed3f7a.png");
+    background-image: url("./img/e5ebed3f7a.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -247,7 +247,7 @@ button:hover {
     flex-direction: column;
     width: 30%;
 
-    background-image: url("/img/play-tic-tac-toe.png");
+    background-image: url("./img/play-tic-tac-toe.png");
     background-repeat: no-repeat;
     background-size: 60vh;
     background-position: center;
@@ -395,7 +395,7 @@ button:hover {
     }
 
     .headline {
-        background-image: url("/img/play-tic-tac-toe.png");
+        background-image: url("./img/play-tic-tac-toe.png");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
