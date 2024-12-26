@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fonts">
+    <section class="game">
+        <section class="component">
+            <button class="time">
+                Start!!
+            </button>
+            <button class="pause">
+                <img src="img/list (1).png" alt="">
+            </button>
+            <button class="soundbutton">
+                <img class="sound" src="img/mute.png" alt="">
+            </button>
+        </section>
+        
+        <section class="turn-container">
+            <h3>Turn for</h3>
+            <div class="turn-box align">X</div>
+            <div class="turn-box align">O</div>
+            <div class="bg"></div>
+        </section>
+        <br>
+    
+        <section class="border">
+            <div>
+                <div class="main-grid">
+                    <div class="box align">0</div>
+                    <div class="box align">1</div>
+                    <div class="box align">2</div>
+                    <div class="box align">3</div>
+                    <div class="box align">4</div>
+                    <div class="box align">5</div>
+                    <div class="box align">6</div>
+                    <div class="box align">7</div>
+                    <div class="box align">8</div>
+                </div>
+            </div>
+        </section>
+        
+        <br>
+        <h2 id="results"></h2>
+        <button id="play-again">Play Again</button>
+    </section>
+
+    <section class="pausemenu align">
+        <button class="close">
+            <img src="img/close.png" alt="">
+        </button>
+        <button class="restart">
+            <img src="img/restart.png" alt="">
+        </button>
+        <button class="exit">
+            <a>
+                <img src="img/sign-out.png" alt="">
+            </a>
+        </button>
+    </section>
+
+    <section class="landingview align">
+        <div class="headline align">
+            <img src="img/tic tac toe.png" alt="">
+        </div>
+        <div class="gambar align">
+            <!-- <img src="img/play-tic-tac-toe.png" alt="">
+            <br> -->
+            <button class="singleplayer">
+                1 Player
+            </button >
+            <button class="multiplayer">
+                2 Player
+            </button>
+        </div>
+    </section>
+
+    <audio src="audio/yurucamp.mp3" autoplay loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
