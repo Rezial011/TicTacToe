@@ -1,488 +1,507 @@
-*{
-    color: black;
-    font-weight: bold;
-    font-family: 'Noto Sans', Georgia, serif;
+* {
+  color: black;
+  font-family: "Nunito", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
 
-    transition: 0.2s ease-in-out;
-    user-select: none;
+  transition: 0.2s ease-in-out;
+  user-select: none;
 }
 
-.align{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body{    
-    background-image: url("./img/e5ebed3f7a.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-color: #dfe7ff60;
+body {
+  background-image: url("./img/e5ebed3f7a.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #dfe7ff60;
 
-    margin: 0;
-    width: 100vw;
-    text-align: center;
-    padding-top: 10vh;
+  margin: 0;
+  width: 100vw;
+  text-align: center;
+  padding-top: 10vh;
 }
 
-.turn-container{
-    width: 170px;
-    height: 80px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    position: relative;
+.game {
+  display: none;
 }
 
-.turn-container h3{
-    margin: 0;
-    grid-column-start: 1;
-    grid-column-end: 3;
+.turn-container {
+  width: 170px;
+  height: 80px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  position: relative;
 }
 
-.turn-box{
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: orange;
-    background-color: white;
+.turn-container h3 {
+  margin: 0;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
 
-    box-shadow: rgba(0, 0, 0, 0.103) 0px 3px 0px;
+.turn-box {
+  font-size: 1.6rem;
+  color: orange;
+  background-color: white;
+
+  box-shadow: rgba(0, 0, 0, 0.103) 0px 3px 0px;
 }
 
 .turn-box:nth-of-type(1) {
-    border-radius: 100px 0 0 100px;
+  border-radius: 100px 0 0 100px;
 }
 
 .turn-box:nth-of-type(2) {
-    border-radius: 0 100px 100px 0;
+  border-radius: 0 100px 100px 0;
 }
 
 .bg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 85px;
-    height: 40px;
-    background-color: #ff8812;
-    z-index: 1;
-    border-radius: 100px;
-    opacity: 10%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 85px;
+  height: 40px;
+  background-color: #ff8812;
+  z-index: 1;
+  border-radius: 100px;
+  opacity: 10%;
 }
 
 .border {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .border > div {
-    width: max-content;
-    background-color: white;
-    border-radius: 50px;
-    padding: 3%;
-    box-shadow: rgba(0, 0, 0, 0.199) 5px 10px 15px;
+  width: max-content;
+  background-color: white;
+  border-radius: 50px;
+  padding: 3%;
+  box-shadow: rgba(0, 0, 0, 0.199) 5px 10px 15px;
 }
 
-.main-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    height: 300px;
-    width: 300px;
-    /* margin: 30px auto; */
-    /* border: 2px solid #000;
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 300px;
+  width: 300px;
+  /* margin: 30px auto; */
+  /* border: 2px solid #000;
     border-radius: 50px; */
-    gap : 5px;
+  gap: 5px;
 
-    background-image: url('./img/pngkey.com-white-grid-png-976890.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+  background-image: url("./img/pngkey.com-white-grid-png-976890.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.box{
-    cursor: pointer;
-    font-size: 4rem;
-    font-weight: 700;
-    /* border: 2px solid #000; */
-    color: #ffa953;
-    border-radius: 5px;
+.box {
+  cursor: pointer;
+  font-size: 4rem;
+  font-weight: 700;
+  /* border: 2px solid #000; */
+  color: #ffa953;
+  border-radius: 5px;
 
-    font-family: "Finger Paint", sans-serif;
+  font-family: "Finger Paint", sans-serif;
 }
 
 .box:hover {
-    background-color: #008bef17;
+  background-color: #008bef17;
 }
 
 #play-again {
-    background-color: #008def;
-    padding: 10px 25px;
-    border: none;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    display: none;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.103) 0px 3px 0px;
+  background-color: #008def;
+  padding: 10px 25px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.103) 0px 3px 0px;
 }
 
 .component {
-    position: absolute;
-    top: 7vh;
-    left: 10%;
-    width: 80%;
+  position: absolute;
+  top: 7vh;
+  left: 10%;
+  width: 80%;
 
-    display: flex;
-    gap: 10px;
-    z-index: 2;
+  display: flex;
+  gap: 10px;
+  z-index: 2;
 }
 
 button {
-    font-size: xx-large;
-    display: flex;
-    align-items: center;
-    background-color: #008def;
-    padding: 7px 10px;
-    border: none;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.103) 0px 3px 0px;
+  font-size: xx-large;
+  display: flex;
+  align-items: center;
+  background-color: #008def;
+  padding: 7px 10px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.103) 0px 3px 0px;
 }
 
 button img {
-    height: 32px;
-    width: auto;
+  height: 32px;
+  width: auto;
 }
 
 .time {
-    padding: 7px 19px;
+  padding: 7px 19px;
 }
 
 .pause {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 #play-again:hover {
-    padding: 10px 40px;
-    background-color: #6bc1ff;
+  padding: 10px 40px;
+  background-color: #6bc1ff;
 }
 
 button:hover {
-    padding: 7px 25px;
-    background-color: #6bc1ff;
+  padding: 7px 25px;
+  background-color: #6bc1ff;
 }
-
 
 /* pause menu  */
 .pausemenu {
-    background-color: rgba(0, 0, 0, 0.719);
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  background-color: rgba(0, 0, 0, 0.719);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-    display: none;
-    gap: 5rem;
+  display: none;
+  gap: 5rem;
 }
 
 .pausemenu img {
-    height: 40px;
-    width: auto;
-    margin: 5px;
+  height: 40px;
+  width: auto;
+  margin: 5px;
 }
 
 .pausemenu button {
-    border-radius: 15px;
+  border-radius: 15px;
 }
 
 .pausemenu button:hover {
-    padding: 15px;
-    background-color: #6bc1ff;
+  padding: 15px;
+  background-color: #6bc1ff;
 }
-
 
 /* landing view  */
 .landingview {
-    background-color: #f5f7ff;
-    background-image: url("./img/e5ebed3f7a.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
-    position: absolute;
-    z-index: 3;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+  background-color: #f5f7ff;
+  background-image: url("./img/e5ebed3f7a.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 
-    justify-content: space-evenly;
-    /* display: none; */
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  justify-content: space-evenly;
+  /* display: none; */
 }
 
 .landingview div {
-    width: 30%;
-    height: 100%;
+  width: 30%;
+  height: 100%;
 }
 
 .landingview img {
-    height: 78%;
-    width: auto;
+  height: 78%;
+  width: auto;
 }
 
 .headline img:hover {
-    height: 76%;
+  height: 76%;
 }
 
 .gambar {
-    gap: 30px;
-    flex-direction: column;
-    width: 30%;
+  gap: 30px;
+  flex-direction: column;
+  width: 30%;
 
-    background-image: url("./img/play-tic-tac-toe.png");
-    background-repeat: no-repeat;
-    background-size: 60vh;
-    background-position: center;
+  background-image: url("./img/play-tic-tac-toe.png");
+  background-repeat: no-repeat;
+  background-size: 60vh;
+  background-position: center;
 }
 
 .gambar button {
-    font-size: 25px;
-    padding: 15px 40px;
-    border-radius: 19px;
+  font-size: 25px;
+  padding: 15px 40px;
+  border-radius: 19px;
 }
 
 .gambar button:hover {
-    padding: 12px 32px;
-    background-color: #6bc1ff;
+  padding: 12px 32px;
+  background-color: #6bc1ff;
 }
-
 
 /* responsive */
 @media (max-width: 992px) {
-    body {
-        padding-top: 10.5vh;
-    }
+  body {
+    padding-top: 10.5vh;
+  }
 
-    .border > div {
-        padding: 2.2%;
-        border-radius: 35px;
-    }
+  .border > div {
+    padding: 2.2%;
+    border-radius: 35px;
+  }
 
-    .main-grid {
-        height: 265px;
-        width: 265px;
-    }
+  .main-grid {
+    height: 265px;
+    width: 265px;
+  }
 
-    .box {
-        font-size: 3.3rem;
-    }
+  .box {
+    font-size: 3.3rem;
+  }
 
-    button img {
-        height: 30px;
-        width: auto;
-    }
+  button img {
+    height: 30px;
+    width: auto;
+  }
 
-    .pausemenu img {
-        height: 35px;
-        width: auto;
-    }
+  .pausemenu img {
+    height: 35px;
+    width: auto;
+  }
 
-    .landingview img {
-        height: 70%;
-        width: auto;
-    }
+  .landingview img {
+    height: 70%;
+    width: auto;
+  }
 
-    .gambar {
-        background-size: 55vh;
-    }
+  .gambar {
+    background-size: 55vh;
+  }
 
-    .gambar button {
-        font-size: 22px;
-    }
+  .gambar button {
+    font-size: 22px;
+  }
 
-    .headline img:hover {
-        height: 68%;
-    }
+  .headline img:hover {
+    height: 68%;
+  }
 }
 
 @media (max-width: 768px) {
-    body {
-        padding-top: 12vh;
-    }
+  body {
+    padding-top: 12vh;
+  }
 
-    .main-grid {
-        height: 260px;
-        width: 260px;
-    }
+  .main-grid {
+    height: 260px;
+    width: 260px;
+  }
 
-    button {
-        font-size: 1.1rem;
-    }
+  button {
+    font-size: 1.1rem;
+  }
 
-    button img {
-        height: 25px;
-        width: auto;
-    }
+  button img {
+    height: 25px;
+    width: auto;
+  }
 
-    #play-again {
-        font-size: medium;
-    }
+  #play-again {
+    font-size: medium;
+  }
 
-    .pausemenu {
-        gap: 3.5rem;
-    }
+  .pausemenu {
+    gap: 3.5rem;
+  }
 
-    .pausemenu img {
-        height: 30px;
-        width: auto;
-    }
+  .pausemenu img {
+    height: 30px;
+    width: auto;
+  }
 
-    .gambar {
-        background-size: 55vh;
-    }
+  .gambar {
+    background-size: 55vh;
+  }
 
-    .gambar button {
-        font-size: 19px;
-    }
+  .gambar button {
+    font-size: 19px;
+  }
 
-    .landingview img {
-        height: 60%;
-        width: auto;
-    }
+  .landingview img {
+    height: 60%;
+    width: auto;
+  }
 
-    .landingview div {
-        width: 100%;
-    }
+  .landingview div {
+    width: 100%;
+  }
 
-    .headline img:hover {
-        height: 58%;
-    }
+  .headline img:hover {
+    height: 58%;
+  }
 }
 
 @media (max-width: 576px) {
-    body {
-        padding-top: 13vh;
-    }
+  body {
+    padding-top: 13vh;
+  }
 
-    .border > div {
-        padding: 3.3%;
-    }
+  .border > div {
+    padding: 3.3%;
+  }
 
-    .pausemenu {
-        gap: 2.5rem;
-    }
+  .pausemenu {
+    gap: 2.5rem;
+  }
 
-    .pausemenu img {
-        height: 25px;
-        width: auto;
-    }
+  .pausemenu img {
+    height: 25px;
+    width: auto;
+  }
 
-    .landingview {
-        flex-direction: column;
-    }
+  .landingview {
+    flex-direction: column;
+  }
 
-    .landingview div {
-        height: auto;
-        width: 100%;
-    }
+  .landingview div {
+    height: auto;
+    width: 100%;
+  }
 
-    .headline {
-        background-image: url("./img/play-tic-tac-toe.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-    }
+  .headline {
+    background-image: url("./img/play-tic-tac-toe.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
 
-    .gambar {
-        background-image: none;
-        flex-direction: row;
-    }
+  .gambar {
+    background-image: none;
+    flex-direction: row;
+  }
 
-    .gambar button {
-        font-size: 19px;
-    }
+  .gambar button {
+    font-size: 19px;
+  }
 
-    .landingview img {
-        height: 55vh;
-        width: auto;
-    }
+  .landingview img {
+    height: 55vh;
+    width: auto;
+  }
 
-    .headline img:hover {
-        height: 54vh;
-    }
+  .headline img:hover {
+    height: 54vh;
+  }
 }
 
 @media (max-width: 412px) {
-    body {
-        padding-top: 15vh;
-    }
+  body {
+    padding-top: 15vh;
+  }
 
-    .border > div {
-        padding: 4.3%;
-        border-radius: 35px;
-    }
+  .border > div {
+    padding: 4.3%;
+    border-radius: 35px;
+  }
 
-    .main-grid {
-        height: 240px;
-        width: 240px;
-    }
+  .main-grid {
+    height: 240px;
+    width: 240px;
+  }
 
-    .box {
-        font-size: 3.2rem;
-    }
+  .box {
+    font-size: 3.2rem;
+  }
 
-    button {
-        font-size: 1rem;
-        /* padding: 2px 8px; */
-    }
+  button {
+    font-size: 1rem;
+  }
 
-    button img {
-        height: 23px;
-        width: auto;
-    }
+  button img {
+    height: 23px;
+    width: auto;
+  }
 
-    #play-again {
-        font-size: 15px;
-    }
+  #play-again {
+    font-size: 15px;
+  }
 
-    .component {
-        left: 7%;
-        width: 85%;
-    }
-    
-    .pausemenu {
-        gap: 2.2rem;
-    }
+  .component {
+    left: 7%;
+    width: 85%;
+  }
 
-    .pausemenu img {
-        height: 23px;
-        width: auto;
-    }
+  .pausemenu {
+    gap: 2.2rem;
+  }
 
-    .gambar {
-        background-image: none;
-        flex-direction: column;
-        gap: 13px;
-    }
+  .pausemenu img {
+    height: 23px;
+    width: auto;
+  }
 
-    .gambar button {
-        font-size: 17px;
-    }
+  .gambar {
+    background-image: none;
+    flex-direction: column;
+    gap: 13px;
+  }
 
-    .landingview img {
-        height: 50vh;
-        width: auto;
-    }
+  .gambar button {
+    font-size: 17px;
+  }
 
-    .headline img:hover {
-        height: 49vh;
-    }
+  .landingview img {
+    height: 50vh;
+    width: auto;
+  }
+
+  .headline img:hover {
+    height: 49vh;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    padding-top: 14vh;
+  }
+
+  .gambar button {
+    font-size: 15px;
+  }
+
+  .landingview img {
+    height: 45vh;
+    width: auto;
+  }
+
+  .headline img:hover {
+    height: 44vh;
+  }
 }
