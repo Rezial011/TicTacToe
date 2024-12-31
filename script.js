@@ -301,3 +301,19 @@ document.querySelector(".exit").addEventListener("click", () => {
   pause = false;
   document.querySelector("h3").textContent = "Turn for";
 });
+
+//button hover sound
+const btn = document.querySelectorAll('button')
+const btnhover = document.querySelector('.btnhover')
+
+document.querySelector('.headline').addEventListener('mouseenter', () => {
+    btnhover.currentTime = 0
+    btnhover.play()
+})
+
+btn.forEach((e) => {  
+    e.addEventListener("mouseenter", () => {
+        btnhover.currentTime = 0
+        btnhover.play()
+    });
+  });

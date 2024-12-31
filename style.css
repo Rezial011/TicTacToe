@@ -412,18 +412,18 @@ button:hover {
   }
 
   .landingview img {
-    height: 55vh;
+    height: 72vw;
     width: auto;
   }
 
   .headline img:hover {
-    height: 54vh;
+    height: 71vw;
   }
 }
 
 @media (max-width: 412px) {
   body {
-    padding-top: 15vh;
+    padding-top: 16vh;
   }
 
   .border > div {
@@ -432,8 +432,8 @@ button:hover {
   }
 
   .main-grid {
-    height: 240px;
-    width: 240px;
+    height: 250px;
+    width: 250px;
   }
 
   .box {
@@ -478,30 +478,11 @@ button:hover {
   }
 
   .landingview img {
-    height: 50vh;
+    height: 85vw;
     width: auto;
   }
 
   .headline img:hover {
-    height: 49vh;
-  }
-}
-
-@media (max-width: 320px) {
-  body {
-    padding-top: 14vh;
-  }
-
-  .gambar button {
-    font-size: 15px;
-  }
-
-  .landingview img {
-    height: 45vh;
-    width: auto;
-  }
-
-  .headline img:hover {
-    height: 44vh;
+    height: 84vw;
   }
 }
