@@ -250,7 +250,9 @@ function startCountdown(duration, display) {
 document.querySelector(".close").addEventListener("click", () => {
   pause = !pause;
 
-  clock.play();
+  if (!isGameOver) {
+    clock.play();
+  }
   document.querySelector(".pausemenu").style.display = "none";
 });
 
